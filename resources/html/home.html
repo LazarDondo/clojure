@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <style>
+    .col-md-4{
+      margin-bottom: 10px;
+    }
+    .card-image {
+      height: 200px;
+    }
+
+    .img-fluid {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Ecommerce</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/order">New order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/orders">Orders</a>
+        </li>
+        {% ifequal admin "true" %}
+        <li class="nav-item">
+          <a class="nav-link" href="/addProduct">Add product</a>
+        </li>
+        {% endifequal %}
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container" style="padding-top: 10%;">
+    <div class="row" id="ads">
+      <div class="col-md-4">
+        <div class="card rounded">
+          <div class="card-image">
+            <span class="card-notify-badge">Xiaomi 12</span>
+            <img class="img-fluid" src="https://i01.appmifile.com/webfile/globalimg/dongxuechun/12prohei.png"
+              alt="Xiaomi 12" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card rounded">
+          <div class="card-image">
+            <span class="card-notify-badge">Yonex tennis racket</span>
+            <img class="img-fluid"
+              src="https://img.tenniswarehouse-europe.com/watermark/rs.php?path=VCGA27-1.jpg&nw=296" alt="Yonex" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card rounded">
+          <div class="card-image">
+            <span class="card-notify-badge">Galaxy 4</span>
+            <img class="img-fluid"
+              src="https://images.samsung.com/is/image/samsung/p6pim/my/2108/gallery/my-galaxy-watch4-398925-sm-r870nzkaxme-thumb-481113168?$480_480_PNG$"
+              alt="Galaxy 4" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="ads">
+      <div class="col-md-4">
+        <div class="card rounded">
+          <div class="card-image">
+            <span class="card-notify-badge">MI Band 6</span>
+            <img class="img-fluid" src="https://mi-srbija.rs/storage/product/images/4f/ec/mi-band-6-1138.png"
+              alt="MI Band 6" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card rounded">
+          <div class="card-image">
+            <span class="card-notify-badge">Mirage Pro</span>
+            <img class="img-fluid"
+              src="https://www.probike.rs/wp-content/uploads/2021/06/b292a0320-black-blue-bicikl-polar-Mirage-Pro-crno-plavi-probike.rs_.jpg"
+              alt="Mirage Pro" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="col-md-4">
+        <div class="card rounded">
+          <div class="card-image">
+            <span class="card-notify-badge">Mop Pro</span>
+            <img class="img-fluid"
+              src="https://www.digiexpert.si/_media/cvoEshop/image/608bff63e35922001cfa83fd_xiaomi_mi_2_mop+_1_original.png"
+              alt="Mop Pro" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
