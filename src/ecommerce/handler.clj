@@ -12,6 +12,7 @@
             [ecommerce.routes.home :refer [home-routes]]
             [ecommerce.routes.login :refer [login-routes]]
             [ecommerce.routes.order :refer [order-routes]]
+            [ecommerce.routes.product :refer [product-routes]]
             [ring.middleware.webjars :refer [wrap-webjars]]
             [ring.middleware.flash :refer [wrap-flash]]
             [buddy.auth.backends.session :refer [session-backend]]
@@ -31,7 +32,7 @@
 
 
 (def app
-  (-> (routes home-routes order-routes)
+  (-> (routes home-routes order-routes product-routes)
       (wrap-json-response)
       (handler/site)
       (wrap-authentication backend)

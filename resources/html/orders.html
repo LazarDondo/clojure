@@ -66,7 +66,7 @@
                 <td class="shippingAddress">{{order.shippingAddress}}</td>
                 <td>
                   <button type="button" data-toggle="modal" id="update" data-target="#updateDialog" data-id={{order.id}}
-                    class="update btn btn-info btn-sm"><span class="fa fa-edit" aria-hidden="true"></span>
+                    class="btn btn-info btn-sm"><span class="fa fa-trash" aria-hidden="true"></span>
                   </button>
                 </td>
               </tr>
@@ -89,7 +89,7 @@
           <div class="form-group row">
             <label class="col-md-3 control-label">Quantity:</label>
             <div class="col-md-9">
-              <input id="quantity" type="text" class="form-control" name="quantity" placeholder="Quantity" min="1">
+              <input id="quantity" type="number" class="form-control" name="quantity" placeholder="Quantity" min="1">
             </div>
           </div>
 
