@@ -44,10 +44,9 @@
         (empty? user)
         (home-page "Enter credentials")
         :else
-        (assoc (redirect "/home"):session (assoc session :identity user))))
-  )
+        (assoc (redirect "/home"):session (assoc session :identity user)))))
   
-  (defn logout [request]
+  (defn logout [order]
     (-> (redirect "/")
         (assoc :session {})))
   
@@ -60,5 +59,5 @@
   
   (defroutes home-routes
              (GET "/" [] (home-page))
-             (POST "/" request (login-page-submit request ))
-             (GET "/home" request (home (:session request))))
+             (POST "/" order (login-page-submit order))
+             (GET "/home" order (home (:session order))))

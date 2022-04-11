@@ -37,12 +37,12 @@
       :else
       (assoc (redirect "/home"):session (assoc session :identity user)))) )
 
-(defn logout [request]
+(defn logout [order]
   (-> (redirect "/login")
       (assoc :session {})))
 
 (defroutes login-routes
            (GET "/login" [] (get-login-page))
-           (POST "/login" request (login-page-submit request))
-           (GET "/logout" request (logout request))
+           (POST "/login" order (login-page-submit order))
+           (GET "/logout" order (logout order))
            )

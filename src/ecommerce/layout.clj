@@ -38,8 +38,9 @@
      :body    (parser/render-file "error.html" error-details)})
   
   (defn is-admin? [session]
+    (print session)
     (and (authenticated? session)
-         (="admin" (:assignedrole (:identity session)))))
+         (="admin" (:role (:identity session)))))
   
   
   
