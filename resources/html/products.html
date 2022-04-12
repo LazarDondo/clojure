@@ -72,14 +72,14 @@
                                 <td class="description">{{product.description}}</td>
                                 <td class="price">{{product.price}}</td>
                                 <td>
-                                    <button type="button" data-toggle="modal" id="update" data-target="#updateDialog"
+                                    <button type="button" data-toggle="modal" data-target="#updateDialog"
                                         data-id={{product.id}} class="update btn btn-info btn-sm"><span
                                             class="fa fa-edit" aria-hidden="true"></span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button type="button" data-toggle="modal" id="delete" data-target="#deleteDialog"
-                                        data-id={{product.id}} class="btn btn-info btn-sm"><span class="fa fa-trash"
+                                    <button type="button" data-toggle="modal" data-target="#deleteDialog"
+                                        data-id={{product.id}} class="delete btn btn-info btn-sm"><span class="fa fa-trash"
                                             aria-hidden="true"></span>
                                     </button>
                                 </td>
@@ -154,11 +154,14 @@
 
 <script>
     $(document).ready(function () {
-        $("#update").on('click', function () {
+        $(".update").on('click', function () {
             var row = $(this).closest('tr');
             $("#id").val(row.attr("id"));
+            $("#name").val(row.find("td:eq(0)").text());
+            $("#description").val(row.find("td:eq(1)").text());
+            $("#price").val(row.find("td:eq(2)").text());
         });
-        $("#delete").on('click', function () {
+        $(".delete").on('click', function () {
             var row = $(this).closest('tr');
             $("#deleteId").val(row.attr("id"));
         });
