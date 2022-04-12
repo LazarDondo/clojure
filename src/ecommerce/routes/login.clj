@@ -15,7 +15,6 @@
   {:username [st/required st/string]
    :password [st/required st/string]})
 
-
 (defn get-login-page [&[error]]
   (render-file "html/login.html" {:title "Login"
                                    :error error}))
@@ -31,7 +30,6 @@
   (let [user (get-user params)]
     (cond
       (not (validate-user? params))
-      (println "Enter credentials")
       (empty? user)
       (get-login-page "Enter credentials")
       :else

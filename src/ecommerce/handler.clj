@@ -22,14 +22,11 @@
             [buddy.auth.accessrules :refer [restrict]]
             [ring.middleware.json :refer [wrap-json-response]]))
 
-
-
 (def backend (session-backend))
 
 (defroutes app-routes
            (route/resources "/")
            (route/not-found "Not Found"))
-
 
 (def app
   (-> (routes home-routes order-routes product-routes)

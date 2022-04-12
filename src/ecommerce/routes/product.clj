@@ -40,7 +40,7 @@
       (controller/update-product params))
 
     (defn delete-product [{:keys [params session]}]
-        (controller/delete-product (:id (:identity session))))
+        (controller/delete-product (:id params)))
     
     (defroutes product-routes
       (GET "/products" product (get-all-products (:session product)))

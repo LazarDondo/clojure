@@ -33,7 +33,6 @@
 (k/defentity order
   (k/table :productorder))
 
-
 (defn add-order [params]
 (k/insert order
  (k/values params)))
@@ -43,14 +42,6 @@
     (k/fields :* [:product.name :product])
     (k/join product (= :productOrder.productId :product.id))
     (k/where {:userId userId})))
-
-(defn delete-order [id]
-(k/delete order
- (k/where {:id id})))
-
-(defn find-order [params]
-(k/select order
- (k/where params)))
 
 (defn update-order [params]
 (k/update order

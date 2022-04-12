@@ -33,8 +33,6 @@
                   :userId (:userId params)
    } order-schema))
     
-    
-    
     (defn get-add-order-page [session &[message]]
       (if-not (authenticated? session)
         (redirect "/")
@@ -42,8 +40,6 @@
                                         :products (controller/get-all-products)
                                         :admin (layout/is-admin? session)
                                         :logged (:identity session)})))
-    
-    
     
     (defn add-order [{:keys [params session]}]
       (order-valid? params)
@@ -55,7 +51,6 @@
                                       :admin (layout/is-admin? session)}))
     
     (defn edit-order [{:keys [params session]}]
-      (println params)
       (controller/update-order params))
     
     (defroutes order-routes

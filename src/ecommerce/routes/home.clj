@@ -23,7 +23,6 @@
     {:username [st/required st/string]
      :password [st/required st/string]})
   
-  
   (defn get-login-page [&[error]]
     (render-file "/" {:title "Login"
                       :error error}))
@@ -34,7 +33,6 @@
   
   (defn get-user [params]
     (first (controller/find-user params)))
-  
   
   (defn login-page-submit [{:keys [params session]}]
     (let [user (get-user params)]
@@ -54,8 +52,6 @@
     (render-file "home.html" {:title "Home"
                                :logged (:identity session)
                                 :admin (layout/is-admin? session)}))
-  
-  
   
   (defroutes home-routes
              (GET "/" [] (home-page))
