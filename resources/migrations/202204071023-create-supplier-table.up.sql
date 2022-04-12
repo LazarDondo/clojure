@@ -6,4 +6,6 @@ CREATE TABLE supplier(
 --;;
 insert into supplier(id, name) values
 (1,'Xiaomi'),
-(2,'Yonex');
+(2,'Yonex'),
+(3,'Samsung'),
+(4,'Mirage');
