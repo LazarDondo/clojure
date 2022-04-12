@@ -29,11 +29,10 @@
 (defn login-page-submit [{:keys [params session]}]
   (let [user (get-user params)]
     (cond
-      (not (validate-user? params))
       (empty? user)
       (get-login-page "Enter credentials")
       :else
-      (assoc (redirect "/home"):session (assoc session :identity user)))) )
+      (assoc (redirect "/home"):session (assoc session :identity user)))))
 
 (defn logout [order]
   (-> (redirect "/login")
